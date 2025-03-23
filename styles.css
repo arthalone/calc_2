@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4c9e86, #6bc09c81);
+  font-family: 'Arial', sans-serif;
+}
+
+.calculator {
+  background: #2c3e50;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  overflow: hidden;
+}
+
+.display {
+  background: #34495e;
+  color: #ecf0f1;
+  padding: 20px;
+  text-align: right;
+}
+
+#history {
+  font-size: 0.9em;
+  color: #bdc3c7;
+  height: 20px;
+}
+
+#result {
+  font-size: 2.5em;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+button {
+  background: #34495e;
+  color: #ecf0f1;
+  border: none;
+  padding: 20px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #3b4a5e;
+}
+
+button[data-value="C"],
+button[data-value="CE"] {
+  background: #e74c3c;
+}
+
+button[data-value="C"]:hover,
+button[data-value="CE"]:hover {
+  background: #c0392b;
+}
+
+/* Botão "0" */
+button.zero {
+  grid-column: 1 / span 3; /* Ocupa 3 colunas */
+  grid-row: 5; /* Linha 5 */
+}
+
+/* Botão "." */
+button[data-value="."] {
+  grid-column: 4; /* Coluna 4 */
+  grid-row: 4; /* Linha 4 */
+}
+
+/* Botão "=" */
+button[data-value="="] {
+  grid-column: 4; /* Coluna 4 */
+  grid-row: 5; /* Linha 5 */
+  background: #2ecc71;
+}
+
+button[data-value="="]:hover {
+  background: #27ae60;
+}
